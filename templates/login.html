@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"
+        integrity="sha512-rFun1mEMg3sNDcSjeGP35cLIycsS+og/QtN6WWnoSviHU9ykMLNQp7D1uuG1AzTV2w0VmyFVpszi2QJwiVW6oQ=="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+    <meta charset="utf-8">
+    <title>
+        Login
+    </title>
+</head>
+
+<body class="login"
+    style="text-align:center;background-image: url('../static/img/butterfly.jpg'); 
+     background-size: cover;
+  height: 100%;
+  overflow: hidden;" >
+
+    <div>
+
+        <p class="flash-msg"
+            style="color:red; position: absolute; left: 2vw; top:10vw; font-size: calc(15px + .5vw);text-align: center;">
+        </p>
+        <h1 style="color:rgb(83, 237, 248);font-size: calc(20px + 3vw);opacity: 1;">KP Depression Thought Log</h1>
+        <form action="/login" method='POST'>
+            <label>
+                <h4
+                    style="color:rgb(9, 13, 245);font-size: calc(14px + 2vw); position:absolute; left: 13vw; top:12vw;">
+                    Please log in:</h4>
+            </label><br>
+            <div style="position: absolute;left: 14vw; top:23vw;">
+                <input type="text" name="email" placeholder="Type email here."
+                    style="background-color: transparent;font-weight: 500;color:black;">
+            </div>
+            <div style="position: absolute;left: 14vw; top:27vw;">
+                <input type="password" name="password" placeholder="Type password here."
+                    style="background-color: transparent; font-weight: 500;color:black;">
+            </div>
+    </div>
+    <div style="position: absolute;left: 16vw; top:32vw;">
+        <input type="submit" id="login" value="Log In" style="background-color:rgb(253, 219, 127);">
+    </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <form action="/user_registration_route" style="position:-webkit-sticky;display: flex;justify-content:left;height:50px;">
+        <div style="color:rgb(253, 219, 127);font-size: calc(14px + 2vw); ">
+            New?<br>
+            <input type="submit" id="submit" value="Register" style="background-color:rgb(253, 219, 127);">
+        </div>
+    </form>
+    </div>
+    
+    </div>
+    
+</body>
+
+</html>

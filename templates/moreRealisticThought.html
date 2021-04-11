@@ -1,0 +1,906 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+       
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"
+            integrity="sha512-k8F8QynmFNURwbUJC8drKA+fo3YfNvjqKzStdydD6au+MzvxBoRnxH8E31RJXwDY9DrnEiPhh9wBoDSIxhkyHQ=="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.js"
+            integrity="sha512-Y36f1QBUtewxhuL8VzWzj6xgtHm4CTgYSdvW21mA6YZBduo6VjvGj79BKUhTqDU4xI9NpVMvCvOxByTsKlh1iQ=="
+            crossorigin="anonymous"></script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            More Realistic Q's
+        </title>
+        <style>
+            li {
+                list-style-type: none;
+                font-size: 2vw;
+            }
+        </style>
+    </head>
+
+    <body
+        style="text-align: center;background-image: linear-gradient(to right,rgb(8, 180, 202),rgb(116, 208, 236), rgb(113, 113, 243),rgb(162, 142, 236),rgb(192, 192, 245));background-repeat: repeat; ">
+        <img src="../static/img/elephants.jpg" style="height:150px;width:150px; text-align: center;" />
+        <img src="../static/img/boat.jpg" style="height:150px;width:150px; text-align: center;" /><br>
+
+        <br><br>
+
+        <div>
+            <h1>More Realistic Questions</h1>
+            <br>
+        </div>
+        <br><br>
+
+
+
+        <h3>In reference to your automatic thought:<br><br> '{{ session['automatic_thought'] }}',
+            <br><br>answer the following questions to help guide yourself toward more realistic thought processes.
+        </h3>
+   
+        <form action='/moreRealisticThought' method="POST" style="text-align: center"> <br><br>
+
+
+
+            <div class="form allOrNothingThinking" id="allOrNothingThinking" style="display: none">
+                <label class="label" for="allOrNothingThinking" style="color:red; font-size:2vw;font-weight:bold;">
+                    ALL-OR-NOTHING THINKING</label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue"> Do I have any evidence to believe this (distorted) thought?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="Yes, I have evidence to believe this (distorted) thought.">
+                        <label class="label" for="allOrNothingThinking"> Yes</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="No, I do NOT have evidence to believe this (distorted) thought.">
+                        <label class="label" for="allOrNothingThinking"> No</label><br>
+
+                    </li>
+                    <br>
+                    <br>
+                    <li>
+                        <div style="color:blue"> Is it reasonable to expect that I will never make mistakes?</div><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="Yes, it is reasonable to expect that I will never make mistakes?">
+                        <label class="label" for="allOrNothingThinking" > Yes, it is reasonable to expect that I will
+                            never make mistakes</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="It is more reasonable that I will make mistakes and that is ok?">
+                        <label class="label" for="allOrNothingThinking"> It is more reasonable that I will make
+                            mistakes and that making mistakes is ok?</label><br>
+                    </li>
+
+                    <li><br><br>
+                        <div style="color:blue"> Is it really "everybody", "always", "never", etc...?</div><br>
+
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="It is really “everybody”, “always,”  “never”, etc...">
+                        <label class="label" for="allOrNothingThinking" > It is really “everybody”, “always,” “never”,
+                            etc...</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="It is more realistically “some people”, “sometimes”, etc?">
+                        <label class="label" for="allOrNothingThinking"> It is more realistically “some people”,
+                            “sometimes”, etc?</label><br>
+                    </li>
+                </ul>
+                <br><br>
+
+            </div>
+
+            <div class="form overgeneralization" id="overgeneralization" style="display: none">
+
+                <label class="label" for="overgeneralization" style="color:red; font-size:2vw;font-weight:bold;">
+                    OVERGENERALIZATION </label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue"> If this happened once or a few times, does it necessarily mean forever?
+                        </div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="Yes, because this happened once or a few times, it does  mean forever.">
+                        <label class="label" for="overgeneralization"> Yes, because this happened once or a few times,
+                            it does mean forever. </label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="No, just because this happened once or a few times, it does not  mean forever.">
+                        <label class="label" for="overgeneralization"> No, just because this happened once or a few
+                            times, it does not mean forever. </label><br>
+
+                    </li>
+                    <br><br>
+                    <li>
+                        <div style="color:blue">Has anyone else faced a similar roadblock and eventually overcome it
+                        </div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Yes, others have overcome this before, which means that I could too.">
+                        <label class="label" for="overgeneralization"> Yes, others have overcome this before, which
+                            means that I could too. </label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value=" No, I have never heard about anyone overcoming something like this before. ">
+                        <label class="label" for="overgeneralization"> No, I have never heard about anyone overcoming
+                            something like this before. </label><br>
+                    </li>
+                </ul>
+                <br><br>
+
+            </div>
+            <div class="form mentalFilter" id="mentalFilter" style="display: none">
+                <label class="label" for="mentalFilter" style="color:red; font-size:2vw;font-weight:bold;"> MENTAL
+                    FILTER </label>
+                <br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Are there other things happening in my life that are not bad?</div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Yes, there are other things happening in my life that are not that bad. ">
+                        <label class="label" for="mentalFilter">Yes, there are other things happening in my life that
+                            are not that bad. </label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="No, there is nothin happening in my life that is not bad.">
+                        <label class="label" for="mentalFilter">No, there is nothin happening in my life that is not
+                            bad. </label>
+
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Are there things going alright or things to be thankful for? </div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Yes, there are other things going alright, or things to be thankful for in my life. ">
+                        <label class="label" for="mentalFilter">Yes, there are other things going alright, or things to
+                            be thankful for in my life. </label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="No, there are not other things going alright, nor things to be thankful for in my life.">
+                        <label class="label" for="mentalFilter">No, there are not other things going alright, nor things
+                            to be thankful for in my life.</label>
+
+                    </li>
+                </ul>
+                <br><br>
+
+            </div>
+            <div class="form disqualifyingThePositive" id="disqualifyingThePositive" style="display: none">
+                <label class="label" for="disqualifyingThePositive" style="color:red; font-size:2vw;font-weight:bold;">
+                    DISQUALIFYING THE POSITIVE </label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Am I disqualifying this because it really is not true?</div><br>
+
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="Yes I am disqualifying things some might view as positive things in my life because those things are not true.">
+                        <label class="label" for="disqualifyingThePositive"> Yes I am disqualifying things some might
+                            view as positive things in my life because those things are not true.</label>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="No, I am not disqualifying things some might view as positive things in my life because those things are actually true.">
+                        <label class="label" for="disqualifyingThePositive"> No, I am not disqualifying things some
+                            might view as positive things in my life because those things are actually true.</label>
+                        <br>
+                        <br>
+                        <div style="color:blue">Am I doing it out of habit because it’s hard for me to think of myself
+                            as OK, appealing, competent, etc.?</div> <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value=" I am doing this out of habbit because it is hard for me to think of myself as OK, appealing, competent, etc...">
+                        <label class="label" for="disqualifyingThePositive"> I am doing this out of habbit because it is
+                            hard for me to think of myself as OK, appealing, competent, etc... </label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="I am NOT doing this out of habbit because it is hard for me to think of myself as OK, appealing, competent, etc..., I am disqualifying the positives because sometimes that is necessary.">
+                        <label class="label" for="disqualifyingThePositive"> I am NOT doing this out of habbit because
+                            it is hard for me to think of myself as OK, appealing, competent, etc..., I am disqualifying
+                            the positives because sometimes that is necessary. </label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">If it is a compliment, can I say “Thank you?”</div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Yes I can say thank you if I am given a compliment.">
+                        <label class="label" for="disqualifyingThePositive">Yes I can say thank you if I am given a
+                            compliment. </label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="No, I can't see the point of saying thank you if I am given a compliment, or I feel undeserving. ">
+                        <label class="label" for="disqualifyingThePositive">No, I can't see the point of saying thank
+                            you if I am given a compliment, or I feel undeserving. </label><br>
+                    </li>
+                </ul>
+                <br><br>
+            </div>
+            <div class="form mindReading" id="mindReading" style="display: none">
+
+                <label class="label" for="mindReading" style="color:red; font-size:2vw;font-weight:bold;"> MIND READING
+                </label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Is it possible they are thinking something else?</div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Yes, it is possible the other person(s) are thinking of something other than what I think they are thinking.">
+                        <label class="label" for="mindReading"> Yes, it is possible the other person(s) are thinking of
+                            something other than what I think they are thinking. </label><br>
+
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="No, they are thinking exactly what I think they are thinking.  They have to be, there is no possible way they could be thinking of anything different.">
+                        <label class="label" for="mindReading"> No, they are thinking exactly what I think they are
+                            thinking. They have to be, there is no possible way they could be thinking of anything
+                            different. </label><br>
+
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Is there another possible explanation for why they said or did that?
+                        </div><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Yes, there could be another explanation for what they said or did.">
+                        <label class="label" for="mindReading"> Yes, there could be another explanation for what they
+                            said or did. </label><br>
+
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="No, there IS NOT another explanation for what they said or did.">
+                        <label class="label" for="mindReading"> No, there IS NOT another explanation for what they said
+                            or did.</label><br>
+
+
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Could their actions have more to do with themselves than me? Is it
+                            necessarily about me?</div><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Yes, there actions could potentially have nothing to do with me.">
+                        <label class="label" for="mindReading"> Yes, there actions could potentially have nothing to do
+                            with me.</label><br>
+
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="No, their actions did not have anything to do with themselves, and only were about me.">
+                        <label class="label" for="mindReading"> No, their actions did not have anything to do with
+                            themselves, and only were about me.</label><br>
+
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Have I checked it out with them??</div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Yes, I communicated with them to check things out  and to help myself understand their motives/actions.">
+                        <label class="label" for="mindReading"> Yes, I communicated with them to check things out and to
+                            help myself understand their motives/actions.</label><br>
+
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="No, I won't or can't or haven't communicated with them to check things out and to help myself understand their motives/actions.">
+                        <label class="label" for="mindReading"> No, I won't or can't or haven't communicated with them
+                            to check things out and to help myself understand their motives/actions</label><br>
+
+                    </li>
+                </ul>
+                <br><br>
+            </div>
+            <div class="form jumpingToConclusions" id="jumpingToConclusions" style="display: none">
+                <label class="label" for="jumpingToConclusions" style="color:red; font-size:2vw;font-weight:bold;">
+                    JUMPING TO CONCLUSIONS (AKA FORTUNE-TELLING) </label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">What is the most LIKELY outcome (not the worst I can imagine)?</div>
+                        <br>
+                        <label class="label" for="jumpingToConclusions" ><textarea class="positive" rows="5" cols="60"
+                                name="moreRealisticThought" placeholder="Enter details here..."
+                                style="text-align: left;"></textarea>
+                        </label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">What are the odds that this thought: {{session['automatic_thought']}},
+                            is really going to happen? **If the fear is inevidible, such as death, or getting a cold,
+                            what is the liklihood it will occur in the near future?** Select a percentage---</div> <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="There’s less than a 10% chance that what I fear will actually happen.">
+                        <label class="label" for="jumpingToConclusions">There’s a >10% chance that what I fear will
+                            actually happen.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="There’s a 10-19% chance that what I fear will actually happen.">
+                        <label class="label" for="jumpingToConclusions">There’s a 10-19% chance that what I fear will
+                            actually happen.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="There’s a 20-29% chance that what I fear will actually happen.">
+                        <label class="label" for="jumpingToConclusions">There’s a 20-29>% chance that what I fear will
+                            actually happen.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="There’s a 30-39% chance that what I fear will actually happen.">
+                        <label class="label" for="jumpingToConclusions">There’s a 30-39% chance that what I fear will
+                            actually happen.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="There’s a 40-49% chance that what I fear will actually happen.">
+                        <label class="label" for="jumpingToConclusions">There’s a 40-49% chance that what I fear will
+                            actually happen.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="There’s a 50-59% chance that what I fear will actually happen.">
+                        <label class="label" for="jumpingToConclusions">There’s a 50-59% chance that what I fear will
+                            actually happen.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="There’s a 60-69% chance that what I fear will actually happen.">
+                        <label class="label" for="jumpingToConclusions">There’s a 60-6% chance that what I fear will
+                            actually happen.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="There’s a greater than (or equal to) 70% chance that what I fear will actually happen.">
+                        <label class="label" for="jumpingToConclusions">There’s 70 + % chance that what I fear will
+                            actually happen.</label><br>
+
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue"> I were going to bet my next paycheck, would I bet on it happening or
+                            not happening?</div><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="I would bet my paycheck on this thought happening.">
+                        <label class="label" for="jumpingToConclusions">I would bet my paycheck on this thought
+                            happening.</label>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="I would NOT bet my paycheck on this thought happening.">
+                        <label class="label" for="jumpingToConclusions">I would NOT bet my paycheck on this thought
+                            happening.</label>
+                        <br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Have I made it through difficult times before? Even if it did happen the
+                            way I imagine, would I survive?</div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="I have been through difficult times before and I believe I would survive even if this thought occurs.">
+                        <label class="label" for="jumpingToConclusions">I have been through difficult times before and I
+                            believe I would survive even if this thought occurs.</label>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="I have never been through difficult times before and I believe I migiht not  if this thought occurs in real life.">
+                        <label class="label" for="jumpingToConclusions">I have never been through difficult times before
+                            and I believe I migiht not if this thought occurs in real life.</label>
+                        <br>
+                    </li>
+                </ul>
+                <br><br>
+            </div>
+            <div class="form catastrophizing" id="catastrophizing" style="display: none">
+
+                <label class="label" for="catastrophizing"
+                    style="color:red; font-size:2vw;font-weight:bold;">CATASTROPHIZING </label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">How important is this in the grand scheme of my life?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="This is everything in the grand scheme of things, it will be the most important thing ever in my life.">
+                        <label class="label" for="catastrophizing">This is everything in the grand scheme of things, it
+                            will be the most important thing ever in my life. </label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="In the grand scheme of things, this will not be the only or hardest thing I will face in my life.">
+                        <label class="label" for="catastrophizing">In the grand scheme of things, this will not be the
+                            only or hardest thing I will face in my life.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="There is nothing worse that could occur in my life.  And since I did not die from it, I am strong enough to face other things that will come in life.">
+                        <label class="label" for="catastrophizing">There is nothing worse that could occur in my life.
+                            And since I did not die from it, I am strong enough to face other things that will come in
+                            life.</label><br>
+
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Am I really going to care about this in 2 years? 2 months? 2 weeks?
+                        </div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="I am likely to not care about this in 2 years, months or weeks.">
+                        <label class="label" for="catastrophizing">I am likely to not care about this in 2 years, months
+                            or weeks. </label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="I am likely NOT going to stop caring about this in 2 years, months or weeks.">
+                        <label class="label" for="catastrophizing">I am likely NOT going to stop caring about this in 2
+                            years, months or weeks.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Though I may not stop caring about this ever, I can find ways to not allow this thought to be my only thought.">
+                        <label class="label" for="catastrophizing">Though I may not stop caring about this ever, I can
+                            find ways to not allow this thought to be my only thought.</label><br>
+
+                    </li>
+                </ul><br><br><br>
+            </div>
+            <div class="form shouldStatements" id="shouldStatements" style="display: none">
+                <label class="label" for="shouldStatements" style="color:red; font-size:2vw;font-weight:bold;">SHOULD
+                    STATEMENTS </label><br>
+                <ul>
+                    <div>
+                        <div style="color:red; font-size:2vw;font-weight:bold;">(a)'Shoulds' towards ourselves: </div>
+                        <br>
+                        <li>
+                            <div style="color:blue">Is it realistic to expect myself to read the future or know in
+                                advance what was going to happen? </div>
+                            <br>
+                            <input type="checkbox" name="moreRealisticThought" class="positive"
+                                value="I can't possibly know the future or know what will happen.">
+                            <label class="label" for="shouldStatements">I can't possibly know the future or know what
+                                will happen.</label><br>
+                            <input type="checkbox" name="moreRealisticThought" class="negative" value="I know this will happen!">
+                            <label class="label" for="shouldStatements">I know this will happen!</label><br>
+                        </li>
+                        <br>
+                        <li>
+                            <div style="color:blue">Is it reasonable to expect that I will always know the best way to
+                                respond or act in the moment?</div>
+                            <br>
+                            <input type="checkbox" name="moreRealisticThought" class="positive"
+                                value="I can't possibly know the best way to respoond or act or say in the moment.  Nor can anyone else.">
+                            <label class="label" for="shouldStatements">I can't possibly know the best way to respoond
+                                or act in the moment. Nor can anyone else.</label><br>
+                            <input type="checkbox" name="moreRealisticThought" class="negative"
+                                value="I should know what to do or how to act or what to say at all times!">
+                            <label class="label" for="shouldStatements">I should know what to do or how to act or what
+                                to say at all times!</label><br>
+                        </li>
+                        <br>
+                        <li>
+                            <div style="color:blue">If someone else made the same mistake, would I be as mean to them as
+                                I am to myself? </div><br>
+
+                            <input type="checkbox" name="moreRealisticThought" class="negative"
+                                value="There is no excuse for anyone to make such a mistake.  None.  So I should not have made this mistake either!">
+                            <label class="label" for="shouldStatements">There is no excuse for anyone to make such a
+                                mistake. None. So I should not have made this mistake either!</label><br>
+                            <input type="checkbox" name="moreRealisticThought" class="negative"
+                                value="Anyone could make such a mistake, and that includes me.  I should cut myself some slack, just as I would if another person made the same mistake, I would totally cut them slack.  I deserve that same respect for and from myself.">
+                            <label class="label" for="shouldStatements">Anyone could make such a mistake, and that
+                                includes me. I should cut myself some slack, just as I would if another person made the
+                                same mistake, I would totally cut them slack. I deserve that same respect for and from
+                                myself.</label><br>
+                        </li>
+                    <br>
+                        <div style="color:red; font-size:2vw;font-weight:bold;">(b) 'Shoulds' towards others: </div><br>
+                        <li>
+                            <div style="color:blue">Is it reasonable to expect everybody to want what I want, act how I
+                                act, value what I value?</div>
+                            <br>
+                            <input type="checkbox" name="moreRealisticThought" class="negative"
+                                value="No one should be allowed to do that, say that, act like that, or think like that.  It is not right!">
+                            <label class="label" for="shouldStatements">No one should be allowed to do that, say that,
+                                act like that, or think like that. It is not right!</label><br>
+                            <input type="checkbox" name="moreRealisticThought" class="positive"
+                                value="I cannot expect everyone to have the same values as me.  I do not expect everyone to act the same way as me, do the same things I would do, and say the same things I would say.">
+                            <label class="label" for="shouldStatements">I cannot expect everyone to have the same values
+                                as me. I do not expect everyone to act the same way as me, do the same things I would
+                                do, and say the same things I would say.</label><br>
+                        </li>
+                        <br>
+                        <li>
+                            <div style="color:blue"> Is this really how it “should” be, or is it just my preference--the
+                                way I like it, what I prefer, or what works best for me?</div>
+                            <br>
+                            <input type="checkbox" name="moreRealisticThought" class="negative"
+                                value="This really it how it “should” be, it is not just my preference--the way I like it,  what I prefer, or what works best for me, it is what is right.">
+                            <label class="label" for="shouldStatements">This really it how it “should” be, it is not
+                                just my preference--the way I like it, what I prefer, or what works best for me, it is
+                                what is right.</label><br>
+                            <input type="checkbox" name="moreRealisticThought" class="positive"
+                                value="This really not really how it “should” be, it is just my preference--the way I like it,  what I prefer, or what works best for me, it is what is right for me but maybe not for everyone else.">
+                            <label class="label" for="shouldStatements">This really not really how it “should” be, it is
+                                just my preference--the way I like it, what I prefer, or what works best for me, it is
+                                what is right for me but maybe not for everyone else.</label><br>
+                        </li>
+                    </div>
+                </ul>
+                <br><br>
+            </div>
+            <div class="form labeling" id="labeling" style="display: none">
+
+                <label class="label" for="labeling" style="color:red; font-size:2vw;font-weight:bold;">LABELING
+                </label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Is that really my (or their) only attribute?</div><br>
+
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="This is my (or their) only attribute.  This labeling statement is TRUE!">
+                        <label class="label" for="labeling">This is my (or their) only attribute. This labeling
+                            statement is TRUE! </label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="This is NOT my (or their) only attribute.  This labeling statement is not ALL or ONLY true!">
+                        <label class="label" for="labeling">This is NOT my (or their) only attribute. This labeling
+                            statement is not ALL or ONLY true! </label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="This is NOT my (or their) real attribute.  This labeling statement is NOT AT ALL true, I was just angry.">
+                        <label class="label" for="labeling">This is NOT my (or their) real attribute. This labeling
+                            statement is NOT AT ALL true, I was just angry.</label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Is it possible that I (or they) have some good traits or qualities or
+                            skills besides the one I’m focusing on? </div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="I (or they) do not have ANY good traits, qualities or skills besides the one I am focusing on.">
+                        <label class="label" for="labeling">I (or they) do not have ANY good traits, qualities or skills
+                            besides the one I am focusing on. </label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="I (or they) do have MANY (or at least some) good traits, qualities or skills besides the one I am focusing on.">
+                        <label class="label" for="labeling">I (or they) do have MANY (or at least some) good traits,
+                            qualities or skills besides the one I am focusing on.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="I (or they) do have MOSTLY good traits, qualities or skills besides the one I am focusing on, I was just angry and couldn't remember to include those traits in my thought process.">
+                        <label class="label" for="labeling">I (or they) do have MOSTLY good traits, qualities or skills
+                            besides the one I am focusing on, I was just angry and couldn't remember to include those
+                            traits in my thought process.</label><br>
+                    </li>
+                </ul>
+                <br><br>
+
+            </div>
+            <div class="form personalization" id="personalization" style="display: none">
+                <label class="label" for="personalization"
+                    style="color:red; font-size:2vw;font-weight:bold;">PERSONALIZATION </label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Does the other person share some responsibility?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="Whether anyone admits it or not, the other person does share some responsibility in the matter.">
+                        <label class="label" for="personalization">Whether anyone admits it or not, the other person
+                            does share some responsibility in the matter. </label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="Whether anyone admits it or not, the other person does not have any responsibility in the matter. It is all on me.">
+                        <label class="label" for="personalization">Whether anyone admits it or not, the other person
+                            does not have any responsibility in the matter. It is all on me. </label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">If I do share some of the blame for how things turned out, what % of the
+                            responsibility should I take?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="Since I do share some of the blame for how things turned out, I should take less than 10% of the responsibility for how things turned out.">
+                        <label class="label" for="personalization">Since I do share some of the blame for how things
+                            turned out, I should take less than 10% of the responsibility for how things turned
+                            out.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="Since I do share some of the blame for how things turned out, I should take between 10-19% of the responsibility for how things turned out.">
+                        <label class="label" for="personalization">Since I do share some of the blame for how things
+                            turned out, I should take between 10-19% of the responsibility for how things turned
+                            out.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="Since I do share some of the blame for how things turned out, I should take between  20-29% of the responsibility for how things turned out.">
+                        <label class="label" for="personalization">Since I do share some of the blame for how things
+                            turned out, I should take between 20-29% of the responsibility for how things turned
+                            out.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="Since I do share some of the blame for how things turned out, I should take between 30-39% of the responsibility for how things turned out.">
+                        <label class="label" for="personalization"> I do share some of the blame for how things turned
+                            out, I should take between 30-39% of the responsibility for how things turned
+                            out.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="Since I do share some of the blame for how things turned out, I should take betweenThere’s a 40-49% of the responsibility for how things turned out.">
+                        <label class="label" for="personalization">Since I do share some of the blame for how things
+                            turned out, I should take betweenThere’s a 40-49% of the responsibility for how things
+                            turned out</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="Since I do share some of the blame for how things turned out, I should take between 50-59% of the responsibility for how things turned out.">
+                        <label class="label" for="personalization">Since I do share some of the blame for how things
+                            turned out, I should take between 50-59% of the responsibility for how things turned
+                            out.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="Since I do share some of the blame for how things turned out, I should take between 60-69% of the responsibility for how things turned out.">
+                        <label class="label" for="personalization">Since I do share some of the blame for how things
+                            turned out, I should take between 60-69% of the responsibility for how things turned
+                            out.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="Since I do share some of the blame for how things turned out, I should take a greater than (or equal to) 70% of the responsibility for how things turned out.">
+                        <label class="label" for="personalization">Since I do share some of the blame for how things
+                            turned out, I should take a greater than (or equal to) 70% of the responsibility for how
+                            things turned out.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" value="It is all my fault!">
+                        <label class="label" for="personalization">It is all my fault!</label><br>
+
+                    </li>
+                </ul>
+                <br><br>
+            </div>
+            <div class="form externalizingControl" id="externalizingControl" style="display: none">
+                <label class="label" for="externalizingControl"
+                    style="color:red; font-size:2vw;font-weight:bold;">EXTERNALIZING CONTROL </label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Although there are things I cannot control, is there some aspect of this
+                            situation that I can influence?</div><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="There is nothing I can control, no aspects of the situation that I can influence at all!">
+                        <label class="label" for="externalizingControl">There is nothing I can control, no aspects of
+                            the situation that I can influence at all! </label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="There are things I can control,  aspects of the situation that I can influence.">
+                        <label class="label" for="externalizingControl">There are things I can control, aspects of the
+                            situation that I can influence.</label><br>
+
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Is there something I can learn from the experience so I can have more
+                            influence the next time I’m in a similar situation?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="There is nothing I can learn from this! I will not be able to influence my future self if a similar situation occurs in my future.">
+                        <label class="label" for="externalizingControl">There is nothing I can learn from this! I will
+                            not be able to influence my future self if a similar situation occurs in my
+                            future.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="There are things I can learn from thisto where I can influence my future self if a similar situation occurs in my future.">
+                        <label class="label" for="externalizingControl">There are things I can learn from thisto where I
+                            can influence my future self if a similar situation occurs in my future.</label><br>
+
+                    </li>
+                </ul>
+                <br><br>
+
+            </div>
+            <div class="form blamingOthersForOurEmotions" id="blamingOthersForOurEmotions" style="display: none">
+                <label class="label" for="blamingOthersForOurEmotions"
+                    style="color:red; font-size:2vw;font-weight:bold;">BLAMING OTHERS FOR OUR EMOTIONS</label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Even if they said/did something that triggered me, is this something I
+                            was already sensitive about? Insecure about? Even before they did/said something?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="Even if they said/did something that triggered me, I was already sensitive on the subject and/or insecure about the subject before they ever said/did antyhing. ">
+                        <label class="label" for="blamingOthersForOurEmotions">Even if they said/did something that
+                            triggered me, I was already sensitive on the subject and/or insecure about the subject
+                            before they ever said/did antyhing.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="They said/did something that triggered me, I was not already sensitive on the subject and/or insecure about the subject before they ever said/did antyhing.  This is their fault I am feeling this way!">
+                        <label class="label" for="blamingOthersForOurEmotions">They said/did something that triggered
+                            me, I was not already sensitive on the subject and/or insecure about the subject before they
+                            ever said/did antyhing. This is their fault I am feeling this way!</label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Did I have these insecurities way before they ever came into the
+                            picture? Have I had these insecurities in other situations that had nothing to do with this
+                            person?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="I was insecure before I met this person (on the subject), and have had these insecurities in other situations that had nothing to do with this person.">
+                        <label class="label" for="blamingOthersForOurEmotions">I was insecure before I met this person
+                            (on the subject), and have had these insecurities in other situations that had nothing to do
+                            with this person./label><br>
+                            <input type="checkbox" name="moreRealisticThought" class="negative"
+                                value="I was NOT insecure before I met this person (on the subject), and have NOT had these insecurities in other situations ever before.  This MUST be all their fault!">
+                            <label class="label" for="blamingOthersForOurEmotions">I was NOT insecure before I met this
+                                person (on the subject), and have NOT had these insecurities in other situations ever
+                                before. This MUST be all their fault!</label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">If I truly didn’t believe what they said, would they be able to create a
+                            mood in me?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="I sort of, or really, believe what they said, which is why it bothers me and why I am now in this mood.">
+                        <label class="label" for="blamingOthersForOurEmotions">I sort of, or really, believe what they
+                            said, which is why it bothers me and why I am now in this mood.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="I DO NOT believe what they said, I don't understand why (or know exactly why) it bothers me and why I am now in this mood.  It is their fault!">
+                        <label class="label" for="blamingOthersForOurEmotions">I DO NOT believe what they said, I don't
+                            understand why (or know exactly why) it bothers me and why I am now in this mood. It is
+                            their fault!</label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Is it because they forced me to have a mood, or is it that I bought into
+                            what they were selling?</div><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="I bought into what they were selling, even if I didn't belive it before, and that is why I am in a mood about it now.">
+                        <label class="label" for="blamingOthersForOurEmotions">I bought into what they were selling,
+                            even if I didn't belive it before, and that is why I am in a mood about it now.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="I did NOT buy into what they were selling, and I am in a mood about it now because they are lying.">
+                        <label class="label" for="blamingOthersForOurEmotions">I did NOT buy into what they were
+                            selling, and I am in a mood about it now because they are lying.</label><br>
+                    </li>
+                </ul>
+                <br><br>
+            </div>
+            <div class="form beingRight" id="beingRight" style="display: none">
+                <label class="label" for="beingRight" style="color:red; font-size:2vw;font-weight:bold;">BEING
+                    RIGHT</label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">If I am wrong, does this really mean that I am somehow less than them?
+                        </div><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="I am wrong, therefore not as good as the person who is right.">
+                        <label class="label" for="beingRight">I am wrong, therefore not as good as the person who is
+                            right.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="I am wrong, but it doesn't mean I am not as good as the person who is right.">
+                        <label class="label" for="beingRight">I am wrong, but it doesn't mean I am not as good as the
+                            person who is right.</label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">This something that is really important (as far as how I see myself, how
+                            I experience the world, my safety, etc.) or is it just something to be right about?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="It is important to me to be right no matter what!">
+                        <label class="label" for="beingRight">It is important to me to be right no matter
+                            what!</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="Overall, it is not that important whether I am right or wrong, unless it is REALLY important (not just to me at the moment of the thought, but really important on a more grand scale).">
+                        <label class="label" for="beingRight">Overall, it is not that important whether I am right or
+                            wrong, unless it is REALLY important (not just to me at the moment of the thought, but
+                            really important on a more grand scale).</label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">What do I win if I’m proven right? Do the costs of arguing outweigh the
+                            benefits?</div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="I will win the argument if I am proven right, but will lose much more (respect, friendship, etc..., so maybe being proven right isn't the most important thing.">
+                        <label class="label" for="beingRight">I will win the argument if I am proven right, but will
+                            lose much more (respect, friendship, etc..., so maybe being proven right isn't the most
+                            important thing.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="I lose nothing of importance from being proven right, and I am right dang it!   I don't care if I lose anything from it!  What is right is right and everyone should know when I am right!">
+                        <label class="label" for="beingRight">I lose nothing of importance from being proven right, and
+                            I am right dang it! I don't care if I lose anything from it! What is right is right and
+                            everyone should know when I am right!</label><br>
+                    </li>
+                </ul>
+                <br><br> <br>
+            </div>
+            <div class="form theGreatReward" id="theGreatReward" style="display: none">
+                <label class="label" for="theGreatReward" style="color:red; font-size:2vw;font-weight:bold;">THE GREAT
+                    REWARD</label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Is it reasonable to expect others to know my needs or try to meet my
+                            needs if I have never clearly expressed them? </div>
+                        <br>
+                        <input type="checkbox" name="moreRealisticThought" class="negative"
+                            value="Everyone should know this is my need and respect that and try to meet my needs about this.">
+                        <label class="label" for="theGreatReward">Everyone should know this is my need and respect that
+                            and try to meet my needs about this.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="People coudln't possibly know this is my need and respect that and try to meet it because I haven't told them about what my needs are.">
+                        <label class="label" for="theGreatReward">People coudln't possibly know this is my need and
+                            respect that and try to meet it because I haven't told them about what my needs
+                            are.</label><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="While I have expressed my needs, others might not see the importance of meeting these needs in the same way that I see them.">
+                        <label class="label" for="theGreatReward">While I have expressed my needs, others might not see
+                            the importance of meeting these needs in the same way that I see them.</label>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Why would others strive to meet my needs if I have not held them
+                            accountable for doing so?</div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought"  class="negative"
+                            value="I should not have to hold others accountable for meeting MY needs, they should just meet them!">
+                        <label class="label" for="theGreatReward">I should not have to hold others accountable for
+                            meeting MY needs, they should just meet them!</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="If I cannot hold others accountable for meeting my needs, they can't know the importance of needing to be the ones to meet these needs.">
+                        <label class="label" for="theGreatReward">If I cannot hold others accountable for meeting my
+                            needs, they can't know the importance of needing to be the ones to meet these
+                            needs.</label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Am I striking a reasonable balance between meeting my own needs and
+                            meeting the needs of others?</div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="I am more focused on meeting other people's needs, and putting my needs on hold to do so.">
+                        <label class="label" for="theGreatReward">I am more focused on meeting other people's needs, and
+                            putting my needs on hold to do so.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="I am more focused on meeting MY OWN needs, and putting everyone else's needs behind my own.">
+                        <label class="label" for="theGreatReward">I am more focused on meeting MY OWN needs, and putting
+                            everyone else's needs behind my own.<label><br>
+                                <input type="checkbox"  name="moreRealisticThought" class="positive"
+                                    value="I feel I have a healthy balance of meeting other people's needs and meeting my own needs.">
+                                <label class="label" for="theGreatReward">I feel I have a healthy balance of meeting
+                                    other people's needs and meeting my own needs.<label><br>
+                    </li>
+                </ul>
+                <br><br>
+            </div>
+            <div class="form fallacyOfFairness" id="fallacyOfFairness" style="display: none">
+                <label class="label" for="fallacyOfFairness" style="color:red; font-size:2vw;font-weight:bold;">FALLACY
+                    OF FAIRNESS</label><br>
+                <ul>
+                    <li>
+                        <div style="color:blue">Is this unfair event or situation something that I can realistically
+                            control? Would it be a good use of my energy to try to control this?</div><br>
+                        <input type="checkbox" name="moreRealisticThought" class="positive"
+                            value="This unfair event is not within my control and is a waste of time to use good energy to try and control the situation.">
+                        <label class="label" for="fallacyOfFairness">This unfair event is not within my control and is a
+                            waste of time to use good energy to try and control the situation.</label><br>
+                        <input type="checkbox" name="moreRealisticThought"  class="negative"
+                            value="This unfair event is not within my control but it is a a good use of MY time to use good energy to try and control the situation.">
+                        <label class="label" for="fallacyOfFairness">This unfair event is not within my control but
+                            is a a good use of MY time to use good energy to try and control the situation.</label><br>
+                    </li>
+                    <br>
+                    <li>
+                        <div style="color:blue">Though this situation is unfair, are there ways in which my life has
+                            also been fair, or even more than fair, in my favor?</div>
+                        <br>
+                        <input type="checkbox"  name="moreRealisticThought" class="positive"
+                            value="Even though this situation is not fair, there have been other occurances in my life that have been fair or even in my favor.">
+                        <label class="label" for="fallacyOfFairness">Even though this situation is not fair, there have
+                            been other occurances in my life that have been fair or even in my favor.</label><br>
+                        <input type="checkbox"  name="moreRealisticThought" class="negative"
+                            value="This situation is not fair, there have never been other occurances in my life that have been fair or even in my favor.">
+                        <label class="label" for="fallacyOfFairness">This situation is not fair, there have never been
+                            other occurances in my life that have been fair or even in my favor.</label><br>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        <input id="submit" type="submit" value="Submit" style="
+                cursor: pointer;
+                padding: 16px 36px;
+                color: #fff;
+                font-weight: 600;
+                background-color: #0498ee;
+                border: 2px solid #0498ee;
+                border-radius: 50px;
+                overflow: hidden;
+                -webkit-transition: .3s all linear;
+                transition: .3s all linear;
+                font-size: 14px;
+                visibility: visible;">
+        </form>
+        <script>
+
+            var distortionLength = 0;
+            var distortionList = [];
+
+            function test_func(distortion) {
+                // console.log(distortion);
+                distortionLength = distortion.length;
+                for(var i=0 ; i < distortionLength; ){
+                    distortionList.push(distortion[i]);
+                    console.log('distortion[i] ===', distortion[i]);
+                    // document.getElementsById(distortion[i]).style.display = 'block';
+
+                    i++;
+                    };
+            };
+            
+            distortion = test_func({{ distortion|safe }});
+            console.log('distortionList ===', distortionList)
+
+            for(var distorted in distortionList){
+                console.log(distortionList[distorted])
+                document.getElementById(distortionList[distorted]).style.display = 'block';
+            }            
+             
+            
+
+        </script>
+
+    </body>
+
+    </html>

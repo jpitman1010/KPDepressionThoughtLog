@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>
+        Registration
+    </title>
+</head>
+
+<body style="text-align: center;align-items: center;justify-content: center;">
+
+
+    <div style="color: rgb(253, 219, 127);">
+        <h1>Please enter your information.</h1>
+    </div>
+    <br><br><br>
+
+    <form id="registration" action="/user_signup" method="POST" style="text-align: center;justify-content: center;">
+        <div>
+
+            <input type="text" id='email' name="email" placeholder="Type email here." style="background-color: transparent;font-weight: 500;">
+            <br><br>
+
+            <input id="password" type="password" name="password" placeholder="Type password here."
+                style="background-color: transparent;font-weight: 500;">
+            <br><br>
+
+            <input type="text" name="fname" id="fname" placeholder="Type first name here."
+                style="background-color: transparent;font-weight: 500;">
+            <br><br>
+
+            <input type="text" name="lname" id="lname" placeholder="Type last name here."
+                style="background-color: transparent;font-weight: 500;">
+            <br><br> <input type="submit" value="Register" style="background-color:rgb(253, 219, 127);">
+        </div>
+    </form>
+
+
+
+    <script>
+        function runMyFunction() {
+            if (document.getElementsByName("name")[0].value == '') {
+                $("#registration").on('submit', () {
+                            preventDefault();
+                            alert("Please enter value");
+                            document.getElementsByName("name").css({
+                                borderColor = "red"
+                            });
+                        }
+                        if (document.getElementsByName("password")[0].value == '') {
+                            $("#registration").on('submit', () {
+                                    preventDefault();
+                                    alert("Please enter value");
+                                    document.getElementsByName("name").css({
+                                        borderColor = "red"
+                                    });
+                                }
+                            }
+                            if (document.getElementsByName("fname")[0].value == '') {
+                                $("#registration").on('submit', () {
+                                        preventDefault();
+                                        alert("Please enter value");
+                                        document.getElementsByName("name").css({
+                                            borderColor = "red"
+                                        });
+                                    }
+                                }
+                                if (document.getElementsByName("lname")[0].value == '') {
+                                    $("#registration").on('submit', () {
+                                            preventDefault();
+                                            alert("Please enter value");
+                                            document.getElementsByName("name").css({
+                                                borderColor = "red"
+                                            });
+                                        }
+                                    }
+                                    else {
+                                        var form = document.getElementsByName("registration")[0];
+                                        form.submit();
+                                    }
+                                }
+    </script>
+
+
+    <!-- <script>
+        $('#registration').on("submit", validate);
+
+        function validate(e) {
+            var registration = $('#registration'),
+                email = registration.find("input[name='email']"),
+                password = registration.find("input[name='password']"),
+                fname = registration.find("input[name='fname']"),
+                lname = registration.find("input[name='lname']"),
+                emailVal = email.val() || "",
+                passwordVal = password.val() || "",
+                fnameVal = fname.val() || "",
+                lnameVal = lname.val() || "",
+                isValid = true;
+
+            if (!emailVal) {
+                email.css({
+                    borderColor: 'red'
+                });
+
+                isValid = false;
+            }
+            if (!passwordVal) {
+                email.css({
+                    borderColor: 'red'
+                });
+                isValid = false;
+            }
+            if (!fnameVal) {
+                email.css({
+                    borderColor: 'red'
+                });
+                isValid = false;
+            }
+            if (!lnameVal) {
+                email.css({
+                    borderColor: 'red'
+                });
+                isValid = false;
+            }
+            if (!isValid) {
+                e.preventDefault(),
+                    alert("Please fill out all the empty sections.");
+            }
+        }
+        });
+    </script> -->
+</body>
+</html>

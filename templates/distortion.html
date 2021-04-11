@@ -1,0 +1,251 @@
+<DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"
+            integrity="sha512-k8F8QynmFNURwbUJC8drKA+fo3YfNvjqKzStdydD6au+MzvxBoRnxH8E31RJXwDY9DrnEiPhh9wBoDSIxhkyHQ=="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.js"
+            integrity="sha512-Y36f1QBUtewxhuL8VzWzj6xgtHm4CTgYSdvW21mA6YZBduo6VjvGj79BKUhTqDU4xI9NpVMvCvOxByTsKlh1iQ=="
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="..\static\css\styles.css" />
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            DISTORTIONS
+        </title>
+        <style>
+            body {
+                justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    background: #3f81b3 url(https://source.unsplash.com/DSwBHyWKiVw/1280x720) repeat center;
+	background-size: cover;
+    color: white;
+    font-size: 3.5vw;
+}
+.label {
+    font-size: 4vw;
+}
+div h1 {
+    display: inline-flexbox;
+    margin-left:50%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: calc(10px + 1.5vw);
+    font-weight: 700;
+    color: #f5f5f5;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    perspective: 500px;
+
+}
+
+h1::before,
+h1::after {
+    content: attr(aria-label);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    text-shadow: 0.01em 0.01em 0.01em rgba(0, 0, 0, 0.3);
+}
+
+h1::before {
+    animation: floatAbove 3.5s ease-in-out infinite;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+}
+
+h1::after {
+    opacity: 0.65;
+    filter: blur(0.02em);
+    transform: translate(-50%, -50%) rotateX(21deg);
+    animation: floatBelow 3.5s ease-in-out infinite;
+    -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+@keyframes floatAbove {
+    50% {
+        transform: translate(-50%, -60%);
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+                clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+    }
+}
+
+@keyframes floatBelow {
+    50% {
+        transform: translate(-50%, -60%) rotateX(10deg);
+        -webkit-clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+                clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+    }
+}
+p {
+    list-style-type: none;
+    font-size: 2vw;
+}
+input[type='checkbox']{
+    width:40px;
+    height:40px;
+}
+        </style>
+    </head>
+    <body style="text-align: center;">
+        <img src="../static/img/distortions.jpg" style="text-align: center;height:175px;width:175px;" /><br>
+
+        <br><br>   
+
+        <div>
+        <h1 aria-label="COGNITIVE DISTORTIONS"></h1>
+        <br>
+            <h1 aria-label="(Irrational Beliefs)"></h1>
+    </div>
+            <div>
+                <h3 style="color:white; font-weight: bold;font-size:3vw;">In reference to your automatic thought:<br><span style="color:rgb(6, 34, 77); font-weight: regular;font-size:2vw;">"{{session['automatic_thought']}} "</span>
+                    <span style="color:white; font-weight: bold;font-size:3vw;"><br> select all cognitive distortions that you feel apply to this thought:</span> </h3>
+                <form action='/distortion' method="POST" class="form" style="text-align: center"> 
+                <input type="checkbox" name="distortionsList"  name="allOrNothingThinking" value="allOrNothingThinking">
+                <label class="label" for="all-or-nothing-thinking"> ALL-OR-NOTHING THINKING</label><br>
+                
+                <p>(AKA “Polarized Thinking”)   You see things in black and white terms;  it is all one way or the other, with no room for middle ground.  If you fall short of perfect, you see yourself as a failure, an idiot, hideous, etc.   Common with perfectionism.  
+                </p>
+                <br>
+
+                <input type="checkbox" name="distortionsList" id="overgeneralization" name="overgeneralization" value="overgeneralization">
+                <label class="label" for="overgeneralization"> OVERGENERALIZATION </label><br>
+                <p>
+                    You see a single event or a couple events as a never ending pattern.  Prompts an urge to quit, or give in, or not try again.  
+
+                </p>
+                    <br><br>
+                <input type="checkbox" name="distortionsList" id="mentalFilter" name="mentalFilter" value="mentalFilter">
+                <label class="label" for="mentalFilter"> MENTAL FILTER </label>
+                <br><p>
+                    Focusing on a negative event or a negative aspect of a situation, to the extent that you do not keep equal focus on the positive or neutral aspects of a situation.  You do this even if the there are more positives than negatives.  
+
+                </p>
+                    <br><br>
+                <input type="checkbox" name="distortionsList" id="disqualifyingThePositive" name="disqualifyingThePositive" value="disqualifyingThePositive">
+                <label class="label" for="disqualifyingThePositive"> DISQUALIFYING THE POSITIVE </label><br>
+                <p>
+                    You reject positive experiences (good results, positive outcomes, compliments, etc) as not counting.  
+
+                </p>
+                    <br><br><br>
+                <input type="checkbox" name="distortionsList" id="mindReading" name="mindReading" value="mindReading">
+                <label class="label" for="mindReading"> MIND READING </label><br>
+                <p>
+                    You assume what someone must be thinking about you (usually something negative), or you imagine that you know WHY they did what they did (and again assume its something negative about or towards you).
+                </p>
+                    <br><br>
+                <input type="checkbox" name="distortionsList" id="jumpingToConclusions" name="jumpingToConclusions" value="jumpingToConclusions">
+                <label class="label" for="jumpingToConclusions"> JUMPING TO CONCLUSIONS </label><br>
+                <p>
+                    (AKA “Fortune-Telling”):  You anticipate something bad is going to happen and convince yourself that this is true, even with very little evidence, or even though it is highly unlikely. 
+
+                </p>
+                    <br><br>
+                <input type="checkbox" name="distortionsList" id="catastrophizing" name="catastrophizing" value="catastrophizing">
+                <label class="label" for="catastrophizing">CATASTROPHIZING </label><br>
+               <p>
+                Turning small- or medium-sized events, losses, or disappointments into “horrible”, “terrible”, or “unmanageable”, rather than just  “inconvenient”, “frustrating”, or “unwanted”.   Overreacting, even when it is not a catastrophe in the grand scheme of your life.   
+
+               </p>
+                <br><br><br>
+
+                <input type="checkbox" name="distortionsList" id="shouldStatements" name="shouldStatements" value="shouldStatements">
+                <label class="label" for="shouldStatements">SHOULD STATEMENTS </label><br>
+                <p>
+                    (a)”Shoulds” towards ourselves: Beating ourselves up over what we should have said, or done, or known, despite basing this on hindsight you did not have at the time.   Leads to self-criticism, low self worth, guilt, shame, etc.  
+                    (b)  “Shoulds” towards others:  We become angry, resentful, or outraged that others do not believe what we believe, have the same priorities we do, or act how we want them to act.  We do not recognize their right to have different priorities or values.  Not seeing that many of our “shoulds” are based on our own preferences, vs what “should be”.  
+
+                </p>
+                    <br>
+                <input type="checkbox" name="distortionsList" id="labeling" name="labeling" value="labeling">
+                <label class="label" for="labeling">LABELING </label><br>
+                <p>
+                    We label ourselves (or others) as all one thing, based on only one attribute or trait.   Applying a global (usually derogatory) label to ourselves or others.  Despite being made up of thousands of traits, we grab onto one, usually one that symbolizes our past vulnerabilities, such as “stupid”, “ugly”, ect.  
+
+                </p>
+                    <br>
+                <input type="checkbox" name="distortionsList" id="personalization" name="personalization" value="personalization">
+                <label class="label" for="personalization">PERSONALIZATION </label><br>
+                    <p>
+                        We take on responsibility for the way things turn out, even if we had little to do with creating the outcome. “I am to blame for what happened”.   “It’s all my fault”.  “I ruined everything….”  “it’s my fault that you failed…”   Leads to guilt or shame in us, while enabling others to avoid looking at their contribution to a problem.   “Blamers” may find this appealing in us.
+                    </p>
+                    <br>
+
+                <input type="checkbox" name="distortionsList" id="externalizingControl" name="externalizingControl" value="externalizingControl">
+                <label class="label" for="externalizingControl">EXTERNALIZING CONTROL </label><br>
+                    <p>
+                        (Counterpart to Personalization)   Taking a passive or “victim” stance in relation to events or outcomes.  “I’m destined to be unhappy”, “there’s nothing I can do…”, “this is just my lot in life…”,   “the universe must be punishing me…”   Ignoring opportunities to make changes or make different decisions next time.  
+
+                    </p>
+                    <br><br>
+
+                <input type="checkbox" name="distortionsList" id="blamingOthersForOurEmotions" name="blamingOthersForOurEmotions" value="blamingOthersForOurEmotions">
+                <label class="label" for="blamingOthersForOurEmotions">BLAMING OTHERS FOR OUR EMOTIONS</label><br>
+                <p>
+                    We hold others responsible for our emotional states, forgeting that emotions are created within us and by us, based on what we think.  Although others may know our triggers, our reaction is often based on emotions or fears or insecurities we already had.   
+
+                </p>
+
+                    <br><br>
+                   
+                    
+                <input type="checkbox" name="distortionsList" id="beingRight" name="beingRight" value="beingRight">
+                <label class="label" for="beingRight">BEING RIGHT</label><br>
+                    <p>
+                        We fight over insignificant matters as if our lives depended on it.  We cannot allow the other to be right, or we feel compelled to have the last word.  We keep at it until we’re sure we have “won”.   Even if we outwardly give in to keep the peace, we quietly stew about how wrong they are.  
+
+                    </p>
+                    <br><br> 
+                <input type="checkbox" name="distortionsList" id="theGreatReward" name="theGreatReward" value="theGreatReward">
+                <label class="label" for="theGreatReward">THE GREAT REWARD</label><br>
+                   <p>
+                    We sacrifice our needs in order to make others happy.  We put aside our needs time and time again for the convenience of others.  We secretly hope or believe that one day we will be recognized or loved for all the sacrifices we make for others, but end up hurt, disappointed, or resentful when the day never comes.  
+
+                   </p>
+                    <br><br>
+                <input type="checkbox" name="distortionsList" id="fallacyOfFairness" name="fallacyOfFairness" value="fallacyOfFairness">
+                <label class="label" for="fallacyOfFairness">FALLACY OF FAIRNESS</label><br>
+                   <p>
+                    We view unfairness as terrible and avoidable, rather than a sometimes necessary part of human experience. Not accepting unfairness that cannot be changed.  Also focusing so much on what’s unfair that we don’t see what is fair (can overlap with Mental Filter). 
+                   </p>
+
+              
+            </div>
+
+  
+            <input id ="submit" type="submit" value="S u b m i t" style="cursor: pointer;
+                color: #fff;
+                font-weight: 600;
+                background-color: transparent;
+                overflow: hidden;
+                border: 2px solid #0498ee;
+                font-size: 2vw;
+                padding-top: 20px;
+                padding-bottom:20px;
+                width:100%">
+        </form>
+
+    </body>
+
+    </html>
